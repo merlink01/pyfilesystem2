@@ -1,9 +1,9 @@
 import time
 from fs.memoryfs import MemoryFS
-from fs.expose import dokan
+from fs.expose import fuse
 fs = MemoryFS()
 
-mp = dokan.mount(fs, 'Q:\\', fsname='TestFS', volname='TestDrive')
+mp = fuse.mount(fs, '/home/merlink/fusemount/'.encode())
 print (mp.path)
 
 try:
